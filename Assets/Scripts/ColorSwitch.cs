@@ -15,14 +15,15 @@ public class ColorSwitch : MonoBehaviour
     [SerializeField] private Material activatedMaterial;
     [SerializeField] private Material deactivatedMaterial;
 
-
     private void Start()
     {
         meshRenderer = GetComponent<MeshRenderer>();
         objCollider = GetComponent<Collider>();
+
+        ChangeState();
     }
 
-    public void OnColorSwitch()
+    public static void ToggleColor()
     {
         if (playerInCollider)
             return;
@@ -31,9 +32,9 @@ public class ColorSwitch : MonoBehaviour
 
         ColorSwitch[] ColorSwitchObjects = FindObjectsByType<ColorSwitch>(FindObjectsSortMode.None);
 
-        foreach (ColorSwitch csObject in ColorSwitchObjects)
+        foreach (ColorSwitch obj in ColorSwitchObjects)
         {
-            csObject.ChangeState();
+            obj.ChangeState();
         }
     }
 
