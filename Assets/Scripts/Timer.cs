@@ -1,16 +1,14 @@
+using TMPro;
 using UnityEngine;
 
 public class Timer : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
+    public TMP_Text text;
 
-    // Update is called once per frame
-    void Update()
+    private void Start()
     {
+        string decimals = "" + Time.timeSinceLevelLoad % 1;
         
+        text.text = "" + Mathf.Floor(Time.timeSinceLevelLoad) + ":" + decimals.Substring(2,2) + " Seconds" ;
     }
 }
