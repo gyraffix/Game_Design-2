@@ -9,5 +9,8 @@ public class AutoRunnerInputOverride : MonoBehaviour {
 	void Start () 
 	{
         m_PlayerInput.GetDirectionInput(m_InputOverrideName).SetOverride(true, m_Direction);
+
+
+        
 	}
 }
